@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 52" fill="none">
+  <rect x="2" y="4" width="44" height="44" rx="12" fill="#274E3E" stroke="#CEB27B" stroke-width="1"/>
+  <path d="M14 38V24C14 18.4772 18.4772 14 24 14C29.5228 14 34 18.4772 34 24V38" stroke="#DFC99B" stroke-width="1.75" stroke-linecap="round"/>
+  <circle cx="24" cy="24" r="2.5" fill="#FCFBF8"/>
+  <line x1="11" y1="38" x2="37" y2="38" stroke="#DFC99B" stroke-width="1.4" stroke-linecap="round"/>
+  <text x="58" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="500" letter-spacing="-0.4" fill="#FCFBF8">Via<tspan fill="#C9DBD0">Hijrah</tspan></text>
+  <text x="59" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="600" letter-spacing="2.1" fill="#DFC99B">MED DIN DEEN I CENTRUM</text>
+</svg>
