@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export const HeroSection: React.FC = () => {
   const { t, scrollToBookingWithSituation } = useApp();
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      src: '/images/sharjah-mosque-courtyard.jpg',
+      caption: t.hero.galleryCaptions.mosque,
+    },
+    {
+      src: '/images/sharjah-waterfront-mosque.jpg',
+      caption: t.hero.galleryCaptions.waterfront,
+    },
+    {
+      src: '/images/sharjah-residence.jpg',
+      caption: t.hero.galleryCaptions.residence,
+    },
+  ];
 
   return (
-    <section id="top" className="bg-ivory-50 pt-10 pb-20 sm:pt-16 sm:pb-28">
+    <section id="top" className="bg-ivory-50 pb-20 pt-10 sm:pb-28 sm:pt-16">
       <div className="mx-auto max-w-[1200px] px-5 sm:px-6 lg:px-8">
         {/* Top Two-Column Editorial Hero */}
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
@@ -54,18 +70,49 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Clean Sunlit Residence Frame (Zero Clutter) */}
+          {/* Right Column: Sharjah UAE Mosque & Sanctuary Showcase Frame */}
           <div className="lg:col-span-5">
             <div className="rounded-[1.75rem] border border-ivory-300/90 bg-ivory-200/65 p-2.5 shadow-warm sm:p-3.5">
-              <div className="overflow-hidden rounded-[1.35rem]">
+              {/* Primary Image */}
+              <div className="overflow-hidden rounded-[1.35rem] bg-ivory-100">
                 <img
-                  src="/images/sharjah-residence.jpg"
-                  alt="Roligt og solrigt hjem i den muslimske verden"
-                  className="aspect-[4/3.6] w-full object-cover"
+                  src={heroSlides[activeSlide].src}
+                  alt={heroSlides[activeSlide].caption}
+                  className="aspect-[4/3.2] w-full object-cover transition-opacity duration-300"
                 />
               </div>
 
-              <div className="mt-3 rounded-[1.15rem] bg-white px-4 py-4 sm:px-5">
+              {/* Clean 3-Thumbnail Selector Strip (Sharjah Mosque, Sharjah Waterfront, Sunlit Home) */}
+              <div className="mt-2.5 grid grid-cols-3 gap-2">
+                {heroSlides.map((slide, idx) => {
+                  const isActive = idx === activeSlide;
+                  return (
+                    <button
+                      key={slide.src}
+                      type="button"
+                      onClick={() => setActiveSlide(idx)}
+                      className={`group overflow-hidden rounded-xl border text-left transition-all ${
+                        isActive
+                          ? 'border-sage-700 ring-2 ring-sage-700/25'
+                          : 'border-ivory-300 opacity-80 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={slide.src}
+                        alt={slide.caption}
+                        className="aspect-[16/10] w-full object-cover"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+
+              <p className="mt-2 px-1 text-[12.5px] font-medium text-ink-muted">
+                {heroSlides[activeSlide].caption}
+              </p>
+
+              {/* On-the-ground & Local Agents Caption */}
+              <div className="mt-2.5 rounded-[1.15rem] bg-white px-4 py-4 sm:px-5">
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-sage-700" />
                   <div>

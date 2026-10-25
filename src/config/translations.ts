@@ -22,6 +22,12 @@ export interface BudgetTierCard {
   footnote: string;
 }
 
+export interface AdviceItem {
+  num: string;
+  title: string;
+  paragraphs: string[];
+}
+
 export interface TranslationContent {
   langName: string;
   langFlag: string;
@@ -29,12 +35,13 @@ export interface TranslationContent {
     offer: string;
     steps: string;
     budgets: string;
+    advice: string;
     reflection: string;
     bookCta: string;
     mobileDock: {
       steps: string;
       budgets: string;
-      reflection: string;
+      advice: string;
       book: string;
     };
   };
@@ -46,6 +53,11 @@ export interface TranslationContent {
     pivotBody: string;
     primaryCta: string;
     secondaryCta: string;
+    galleryCaptions: {
+      mosque: string;
+      waterfront: string;
+      residence: string;
+    };
     photoCaptionTitle: string;
     photoCaptionBody: string;
     welcomeTitle: string;
@@ -100,6 +112,8 @@ export interface TranslationContent {
       priceNote: string;
       body: string;
       cta: string;
+      caption1: string;
+      caption2: string;
     };
   };
   noFunds: {
@@ -114,6 +128,21 @@ export interface TranslationContent {
     closingLine: string;
     cta: string;
     disclaimer: string;
+  };
+  advice: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    intro1: string;
+    intro2: string;
+    expandLabel: string;
+    collapseLabel: string;
+    items: AdviceItem[];
+    reminder: {
+      title: string;
+      paragraphs: string[];
+      cta: string;
+    };
   };
   emotional: {
     eyebrow: string;
@@ -218,12 +247,13 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       offer: 'Sådan hjælper vi',
       steps: 'Trin for trin',
       budgets: 'Budgetter',
+      advice: 'Gode råd',
       reflection: 'At savne Danmark',
       bookCta: 'Book en samtale',
       mobileDock: {
         steps: 'Trin',
         budgets: 'Budget',
-        reflection: 'Tanker',
+        advice: 'Gode råd',
         book: 'Book samtale',
       },
     },
@@ -236,6 +266,11 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
         'Forestil dig en hverdag, hvor islam er en naturlig del af samfundet, hvor moskéerne er en del af lokalsamfundet, og hvor du kan prioritere din deen og opbygge din fremtid i et muslimsk land.',
       primaryCta: 'Book en indledende samtale',
       secondaryCta: 'Se din hijrah trin for trin',
+      galleryCaptions: {
+        mosque: 'Moskéarkitektur · Sharjah, UAE',
+        waterfront: 'Vandkant & moské · Sharjah, UAE',
+        residence: 'Rolige boligrammer',
+      },
       photoCaptionTitle: 'Folk på jorden & lokal boligadgang',
       photoCaptionBody:
         'Vi har adgang til lejligheder gennem vores lokale agenter — og vi gennemgår og tjekker alt sammen med dig.',
@@ -452,8 +487,10 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
         tag: 'Overvejer du også De Forenede Arabiske Emirater?',
         title: 'Sharjah, UAE — et familievenligt alternativ',
         priceNote: 'Leveomkostninger for enkeltpersoner fra ca. 7.000 DKK/md.',
-        body: 'Ud over Indonesien rådgiver ViaHijrah også om Sharjah i UAE — et alkoholfrit, trygt og kulturelt stærkt emirat med moskéer i alle boligområder og 0% personlig indkomstskat. Vi gennemgår gerne forskellene mellem Indonesien og UAE på vores samtale.',
+        body: 'Ud over Indonesien rådgiver ViaHijrah også om Sharjah i UAE — et alkoholfrit, trygt og kulturelt stærkt emirat med smukke moskéer i alle boligområder og 0% personlig indkomstskat. Vi gennemgår gerne forskellene mellem Indonesien og UAE på vores samtale.',
         cta: 'Hør om både Indonesien og UAE',
+        caption1: 'Vandkanten og moské i Sharjah, UAE',
+        caption2: 'Lokal moské i roligt boligområde i Sharjah',
       },
     },
     noFunds: {
@@ -473,6 +510,99 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       cta: 'Book en samtale med ViaHijrah',
       disclaimer:
         'Vi kan ikke garantere økonomisk støtte eller en bestemt løsning, men vi vil gøre vores bedste for at vejlede dig.',
+    },
+    advice: {
+      eyebrow: 'Gode råd fra os',
+      title: 'Gode råd fra os – før du tager din hijrah',
+      lead: 'Du behøver ikke have et luksusliv for at begynde et nyt kapitel. Men du bør have en realistisk plan.',
+      intro1:
+        'Gennem ViaHijrah ønsker vi ikke blot at hjælpe mennesker med at undersøge mulighederne for at flytte. Vi ønsker også at dele de råd, vi mener, er vigtige at overveje, før man tager en så stor beslutning.',
+      intro2: 'Her er nogle af de ting, vi selv ville anbefale dig at tænke over.',
+      expandLabel: 'Læs hele rådet',
+      collapseLabel: 'Vis mindre',
+      items: [
+        {
+          num: '01',
+          title: 'Lær at leve simpelt – og få mere ud af dine penge',
+          paragraphs: [
+            'Vores første råd er, at du ikke behøver at vente på, at du har råd til en luksuriøs livsstil, før du undersøger muligheden for hijrah.',
+            'Hvis din økonomi er begrænset, kan det være værd at undersøge, om en mere enkel livsstil passer til din situation.',
+            'Danske kroner kan i nogle lande have en relativt høj købekraft. Det betyder, at din økonomi i visse tilfælde kan række længere, end du er vant til i Danmark. Men det afhænger meget af landet, byen, boligudgifterne og din families behov.',
+            'Overvej derfor at begynde med det nødvendige: en passende bolig, mad, transport og en realistisk økonomisk buffer.',
+            'Du behøver ikke have den største lejlighed, spise ude hver dag eller leve luksuriøst fra første dag.',
+            'Vores råd er enkelt: Planlæg efter det liv, du realistisk har råd til – ikke det liv, du håber at få senere.',
+            'Samtidig bør du ikke flytte uden at have undersøgt dine indtægtsmuligheder, de samlede udgifter og en plan for uforudsete situationer.',
+          ],
+        },
+        {
+          num: '02',
+          title: 'Husk din intention',
+          paragraphs: [
+            'Inden du tager en stor beslutning, så spørg dig selv, hvorfor du ønsker at foretage hijrah.',
+            'For nogle handler det om at skabe bedre rammer for deres deen. For andre handler det også om deres børns opvækst, deres familie og ønsket om at leve i et miljø, hvor islam fylder mere naturligt i hverdagen.',
+            'Det er vigtigt at kende sine egne grunde og vende tilbage til dem undervejs.',
+            'Lad beslutningen være velovervejet, og søg Allahs vejledning gennem du’a, istikhara og råd fra mennesker med relevant viden og erfaring.',
+          ],
+        },
+        {
+          num: '03',
+          title: 'Undersøg landet, før du beslutter dig',
+          paragraphs: [
+            'Et muslimsk land er ikke automatisk det rigtige land for alle.',
+            'Undersøg leveomkostninger, opholdsregler, boligmuligheder, sundhedsforsikring, arbejde og mulighederne for at forsørge dig selv og din familie.',
+            'Tænk også over sproget, kulturen, klimaet og den hverdag, du faktisk skal leve.',
+            'Det er bedre at kende udfordringerne på forhånd end at blive overrasket efter ankomsten.',
+          ],
+        },
+        {
+          num: '04',
+          title: 'Prioritér din deen og din familie',
+          paragraphs: [
+            'Overvej, hvilke rammer du ønsker for din religiøse praksis, din hverdag og eventuelle fremtidige børn.',
+            'Tænk ikke kun på, hvor du gerne vil bo, men også på, hvordan du ønsker at leve.',
+            'Undersøg lokale moskeer, islamiske fællesskaber, undervisningsmuligheder og relevante skoler, hvis du flytter med børn.',
+            'Husk samtidig, at du selv fortsat har et ansvar for at søge viden, praktisere din religion og skabe gode rammer for din familie, uanset hvilket land du bor i.',
+          ],
+        },
+        {
+          num: '05',
+          title: 'Vent ikke på det perfekte tidspunkt – men vær ansvarlig',
+          paragraphs: [
+            'Det er let at vente på, at alt skal være perfekt: flere penge, en større opsparing eller fuldstændig sikkerhed om fremtiden.',
+            'Men det betyder ikke, at man bør tage afsted uden forberedelse.',
+            'Vores råd er at begynde med at undersøge mulighederne, skabe et realistisk budget og finde ud af, hvilke krav der gælder for din situation.',
+            'Du behøver ikke have alle svarene i dag. Men du bør kende de vigtigste spørgsmål, inden du træffer beslutningen.',
+          ],
+        },
+        {
+          num: '06',
+          title: 'Vær forberedt på at savne Danmark',
+          paragraphs: [
+            'Du kan komme til at savne familie, venner, kolleger og det velkendte liv, du har haft i mange år.',
+            'Det er naturligt, og det betyder ikke nødvendigvis, at du har truffet den forkerte beslutning.',
+            'Forbered dig på forandringen, hold kontakten til mennesker, der betyder noget for dig, og giv dig selv tid til at skabe en ny hverdag.',
+            'Husk, at det at savne noget hjemmefra og samtidig ønske at bygge en fremtid et andet sted godt kan eksistere side om side.',
+          ],
+        },
+        {
+          num: '07',
+          title: 'Tag imod hjælp, og spørg dem, der kender forholdene',
+          paragraphs: [
+            'Du behøver ikke selv undersøge hvert eneste spørgsmål fra bunden.',
+            'Tal med mennesker, der har erfaring med det land, du overvejer at flytte til. Undersøg officielle krav, og få kvalificeret vejledning om visum, bolig og økonomi.',
+            'Hos ViaHijrah ønsker vi at hjælpe dig med at skabe overblik over mulighederne og forstå de praktiske skridt, der kan være relevante for netop din situation.',
+          ],
+        },
+      ],
+      reminder: {
+        title: 'En påmindelse, vi gerne vil dele',
+        paragraphs: [
+          'Hijrah er en stor beslutning. Den bør hverken træffes alene på baggrund af følelser eller udelukkende ud fra økonomiske beregninger.',
+          'Tænk over din intention, undersøg dine muligheder, tag de nødvendige praktiske forhold alvorligt, og søg Allahs vejledning.',
+          'Du behøver ikke begynde med meget. Du bør begynde med omtanke, en realistisk plan og en klar forståelse af, hvorfor du ønsker at tage dette skridt.',
+        ],
+        cta: 'Lad os undersøge dine muligheder sammen',
+      },
     },
     emotional: {
       eyebrow: 'Den menneskelige side af hijrah',
@@ -598,7 +728,7 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
           uaeSharjah: 'Sharjah, UAE (Fra 7.000 DKK/md.)',
           noFundsYet: 'Ingen opsparing / onlineindkomst endnu — søger vejledning',
         },
-        messageLabel: ' Er der noget særligt, du gerne vil vende? (valgfrit)',
+        messageLabel: 'Er der noget særligt, du gerne vil vende? (valgfrit)',
         messagePlaceholder: 'Skriv gerne et par ord om dine tanker, familie, bolig eller spørgsmål...',
         continueToTimeBtn: 'Fortsæt til valg af tidspunkt',
         privacyNote: 'Dine oplysninger behandles fuldt fortroligt og med amanah.',
@@ -634,12 +764,13 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       offer: 'Hur vi hjälper',
       steps: 'Steg för steg',
       budgets: 'Budgetar',
+      advice: 'Goda råd',
       reflection: 'Att sakna hemma',
       bookCta: 'Boka ett samtal',
       mobileDock: {
         steps: 'Steg',
         budgets: 'Budget',
-        reflection: 'Tankar',
+        advice: 'Goda råd',
         book: 'Boka samtal',
       },
     },
@@ -652,6 +783,11 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
         'Föreställ dig en vardag där islam är en naturlig del av samhället, där moskéerna är en del av lokalsamhället och där du kan prioritera din deen och bygga din framtid i ett muslimskt land.',
       primaryCta: 'Boka ett inledande samtal',
       secondaryCta: 'Se din hijrah steg för steg',
+      galleryCaptions: {
+        mosque: 'Moskéarkitektur · Sharjah, UAE',
+        waterfront: 'Strandpromenad & moské · Sharjah',
+        residence: 'Lugna bostadsmiljöer',
+      },
       photoCaptionTitle: 'Människor på plats & lokal bostadshjälp',
       photoCaptionBody:
         'Vi har tillgång till lägenheter via våra lokala agenter — och vi går igenom och kontrollerar allt tillsammans med dig.',
@@ -749,7 +885,7 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
           summary: 'Vi hjälper dig förstå bostadsmarknaden och var du ska börja.',
           highlightTag: 'Lokala kontakter & mäklare',
           paragraphs: [
-            'Att hitta bostad i ett nytt land är ofta en av de största bekymren när man inte kan området eller språket.',
+            'Att hitta bostad i ett nytt land är ofta en av de största bekymren när man inte kan området eller språk.',
             'Hos ViaHijrah har vi lokala kontakter och mäklare samt tillgång till lägenheter du kan hyra via våra lokala agenter — där vi kontrollerar allt tillsammans med dig.',
             'Du behöver därför inte börja från noll på en okänd bostadsmarknad utan vägledning.',
           ],
@@ -859,8 +995,10 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
         tag: 'Överväger du även Förenade Arabemiraten?',
         title: 'Sharjah, UAE — ett familjevänligt alternativ',
         priceNote: 'Levnadskostnader för ensamstående från ca 7.000 DKK/mån.',
-        body: 'Utöver Indonesien vägleder ViaHijrah även kring Sharjah i UAE — ett alkoholfritt, tryggt och familjeorienterat emirat med moskéer i alla kvarter och 0% personlig inkomstskatt.',
+        body: 'Utöver Indonesien vägleder ViaHijrah även kring Sharjah i UAE — ett alkoholfritt, tryggt och familjeorienterat emirat med vackra moskéer i alla kvarter och 0% personlig inkomstskatt.',
         cta: 'Hör om både Indonesien och UAE',
+        caption1: 'Strandpromenaden och moské i Sharjah, UAE',
+        caption2: 'Kvartersmoské i lugnt bostadsområde i Sharjah',
       },
     },
     noFunds: {
@@ -880,6 +1018,87 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       cta: 'Boka ett samtal med ViaHijrah',
       disclaimer:
         'Vi kan inte garantera ekonomiskt stöd eller en viss lösning, men vi gör vårt bästa för att vägleda dig.',
+    },
+    advice: {
+      eyebrow: 'Goda råd från oss',
+      title: 'Goda råd från oss – innan du gör din hijrah',
+      lead: 'Du behöver inte ha ett lyxliv för att börja ett nytt kapitel. Men du bör ha en realistisk plan.',
+      intro1:
+        'Genom ViaHijrah vill vi inte bara hjälpa människor att undersöka möjligheterna att flytta. Vi vill också dela med oss av de råd vi själva anser är viktiga att tänka igenom inför ett så stort beslut.',
+      intro2: 'Här är några av de saker vi rekommenderar att du reflekterar över.',
+      expandLabel: 'Läs hela rådet',
+      collapseLabel: 'Visa mindre',
+      items: [
+        {
+          num: '01',
+          title: 'Lär dig leva enkelt – och få ut mer av dina pengar',
+          paragraphs: [
+            'Vårt första råd är att du inte behöver vänta tills du har råd med en lyxig livsstil innan du undersöker möjligheten till hijrah.',
+            'Om din ekonomi är begränsad kan det vara värt att se om en enklare livsstil passar din situation.',
+            'Skandinavisk valuta har i vissa länder en relativt stark köpkraft, vilket kan göra att pengarna räcker längre — beroende på land, stad, boendekostnader och familjens behov.',
+            'Vårt råd är enkelt: Planera efter det liv du realistiskt har råd med – inte det liv du hoppas få senare. Samtidigt bör du alltid ha koll på inkomstmöjligheter, utgifter och en buffert för oförutsedda händelser.',
+          ],
+        },
+        {
+          num: '02',
+          title: 'Minns din intention',
+          paragraphs: [
+            'Innan du fattar ett stort beslut, fråga dig själv varför du vill göra hijrah.',
+            'För vissa handlar det om bättre ramar för sin deen, för andra om barnens uppväxt och en vardag där islam känns mer naturlig.',
+            'Låt beslutet vara väl genomtänkt och sök Allahs vägledning genom du’a, istikhara och råd från människor med relevant erfarenhet.',
+          ],
+        },
+        {
+          num: '03',
+          title: 'Undersök landet innan du bestämmer dig',
+          paragraphs: [
+            'Ett muslimskt land är inte automatiskt rätt land för alla.',
+            'Undersök levnadskostnader, uppehållsregler, boende, sjukförsäkring och försörjning — men också språk, kultur, klimat och hur vardagen faktiskt ser ut.',
+            'Det är bättre att känna till utmaningarna på förhand än att bli överraskad efter ankomst.',
+          ],
+        },
+        {
+          num: '04',
+          title: 'Prioritera din deen och din familj',
+          paragraphs: [
+            'Tänk inte bara på var du vill bo, utan också på hur du vill leva.',
+            'Undersök lokala moskéer, islamiska gemenskaper, undervisning och relevanta skolor om du flyttar med barn — och kom ihåg ditt eget ansvar för att söka kunskap och skapa goda ramar för familjen oavsett land.',
+          ],
+        },
+        {
+          num: '05',
+          title: 'Vänta inte på det perfekta tillfället – men var ansvarsfull',
+          paragraphs: [
+            'Det är lätt att vänta på att allt ska bli perfekt, men man bör heller inte resa utan förberedelse.',
+            'Börja med att undersöka möjligheterna, skapa en realistisk budget och förstå vilka krav som gäller för din situation.',
+          ],
+        },
+        {
+          num: '06',
+          title: 'Var beredd på att sakna hemma',
+          paragraphs: [
+            'Att sakna familj, vänner och det välbekanta livet är helt naturligt och betyder inte att beslutet var fel.',
+            'Håll kontakten med dem du håller av och ge dig själv tid att bygga en ny vardag.',
+          ],
+        },
+        {
+          num: '07',
+          title: 'Ta emot hjälp och fråga dem som kan förhållandena',
+          paragraphs: [
+            'Du behöver inte undersöka varje fråga helt från noll på egen hand.',
+            'Hos ViaHijrah hjälper vi dig att skapa överblick över möjligheterna och förstå de praktiska steg som är relevanta för just din situation.',
+          ],
+        },
+      ],
+      reminder: {
+        title: 'En påminnelse vi gärna vill dela',
+        paragraphs: [
+          'Hijrah är ett stort beslut. Det bör varken fattas enbart på känslor eller enbart utifrån ekonomiska beräkningar.',
+          'Tänk över din intention, undersök dina möjligheter, ta de praktiska förberedelserna på allvar och sök Allahs vägledning.',
+          'Du behöver inte börja med mycket. Du bör börja med omtanke, en realistisk plan och en tydlig förståelse för varför du vill ta detta steg.',
+        ],
+        cta: 'Låt oss undersöka dina möjligheter tillsammans',
+      },
     },
     emotional: {
       eyebrow: 'Den mänskliga sidan av hijrah',
@@ -1038,12 +1257,13 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       offer: 'How we help',
       steps: 'Step by step',
       budgets: 'Budgets',
+      advice: 'Our advice',
       reflection: 'Leaving home',
       bookCta: 'Book a call',
       mobileDock: {
         steps: 'Steps',
         budgets: 'Budgets',
-        reflection: 'Reflection',
+        advice: 'Advice',
         book: 'Book call',
       },
     },
@@ -1056,6 +1276,11 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
         'Imagine an everyday life where Islam is a natural part of society, where mosques belong to the neighborhood, and where you can prioritize your deen and build your future in a Muslim country.',
       primaryCta: 'Book an introductory conversation',
       secondaryCta: 'See your hijrah step by step',
+      galleryCaptions: {
+        mosque: 'Mosque architecture · Sharjah, UAE',
+        waterfront: 'Waterfront & mosque · Sharjah, UAE',
+        residence: 'Peaceful residential living',
+      },
       photoCaptionTitle: 'People on the ground & local apartment access',
       photoCaptionBody:
         'We have access to apartments you can rent with our local agents — and we review and check everything together with you.',
@@ -1263,8 +1488,10 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
         tag: 'Also considering the United Arab Emirates?',
         title: 'Sharjah, UAE — a family-focused alternative',
         priceNote: 'Solo living benchmark from approx. 7.000 DKK/mo.',
-        body: 'Alongside Indonesia, ViaHijrah also advises on Sharjah in the UAE — an alcohol-free, safe, family-centered emirate with neighborhood mosques and 0% personal income tax.',
+        body: 'Alongside Indonesia, ViaHijrah also advises on Sharjah in the UAE — an alcohol-free, safe, family-centered emirate with beautiful neighborhood mosques and 0% personal income tax.',
         cta: 'Discuss both Indonesia and UAE',
+        caption1: 'Waterfront promenade and mosque in Sharjah, UAE',
+        caption2: 'Neighborhood masjid in a quiet Sharjah community',
       },
     },
     noFunds: {
@@ -1284,6 +1511,85 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       cta: 'Book a conversation with ViaHijrah',
       disclaimer:
         'We cannot guarantee financial support or a specific outcome, but we will do our very best to guide you.',
+    },
+    advice: {
+      eyebrow: 'Practical advice from us',
+      title: 'Our advice – before taking your hijrah',
+      lead: 'You do not need a luxury lifestyle to begin a new chapter. Yet you should have a realistic plan.',
+      intro1:
+        'Through ViaHijrah, we do not only want to help people explore practical relocation options. We also wish to share the reflections we believe are essential before making such a major life decision.',
+      intro2: 'Here are some of the lessons we sincerely recommend thinking over.',
+      expandLabel: 'Read full advice',
+      collapseLabel: 'Show less',
+      items: [
+        {
+          num: '01',
+          title: 'Learn to live simply – and make your money go further',
+          paragraphs: [
+            'Our first piece of advice is that you do not need to wait until you can afford luxury before exploring the possibility of hijrah.',
+            'In certain countries, Danish kroner carry comparatively strong purchasing power — depending heavily on the country, city, housing choice, and family needs.',
+            'Start with essentials: suitable housing, food, transport, and a realistic financial buffer. Plan around the life you can realistically afford today — not the lifestyle you hope to reach later — while carefully verifying income, total expenses, and emergency reserves beforehand.',
+          ],
+        },
+        {
+          num: '02',
+          title: 'Remember your intention',
+          paragraphs: [
+            'Before making a major decision, ask yourself why you wish to make hijrah.',
+            'Whether for your deen, your children’s upbringing, or living where Islam feels natural in daily life, know your own reasons and return to them along the journey.',
+            'Keep the decision deliberate, seeking Allah’s guidance through du’a, istikhara, and counsel from experienced people.',
+          ],
+        },
+        {
+          num: '03',
+          title: 'Research the country before deciding',
+          paragraphs: [
+            'A Muslim country is not automatically the right fit for everyone.',
+            'Examine living costs, residency rules, housing, healthcare, and livelihood alongside language, culture, climate, and real daily routines so you know challenges beforehand rather than after arriving.',
+          ],
+        },
+        {
+          num: '04',
+          title: 'Prioritize your deen and your family',
+          paragraphs: [
+            'Think not only about where you want to live, but how you intend to live.',
+            'Explore local mosques, Islamic communities, learning opportunities, and schools if moving with children — remembering that seeking knowledge and nurturing your family remains your personal responsibility wherever you live.',
+          ],
+        },
+        {
+          num: '05',
+          title: 'Do not wait for the perfect moment – yet remain responsible',
+          paragraphs: [
+            'Waiting forever for perfection is easy, yet leaving unprepared is unwise.',
+            'Begin by exploring options, building a realistic budget, and learning the requirements relevant to your situation. You do not need every answer today, only clarity on the most important questions before deciding.',
+          ],
+        },
+        {
+          num: '06',
+          title: 'Be prepared to miss home',
+          paragraphs: [
+            'Missing family, friends, colleagues, and familiar surroundings is completely natural and does not mean you made the wrong decision.',
+            'Stay connected with loved ones and give yourself patience to build a new everyday rhythm.',
+          ],
+        },
+        {
+          num: '07',
+          title: 'Accept support and ask those who know the ground realities',
+          paragraphs: [
+            'You do not have to piece together every detail from scratch alone.',
+            'Speak with people experienced in your chosen destination, verify official requirements, and use ViaHijrah to build a clear overview of the steps relevant to your situation.',
+          ],
+        },
+      ],
+      reminder: {
+        title: 'A reminder we wish to share',
+        paragraphs: [
+          'Hijrah is a major decision. It should neither be made purely on emotion nor solely on financial calculations.',
+          'Reflect on your intention, research your options, take practical realities seriously, and ask Allah for guidance.',
+          'You do not need much to begin. You should begin with care, a realistic plan, and clear understanding of why you wish to take this step.',
+        ],
+        cta: 'Let us explore your options together',
+      },
     },
     emotional: {
       eyebrow: 'The emotional side of hijrah',

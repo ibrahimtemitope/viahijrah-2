@@ -90,7 +90,7 @@ export const BudgetsSection: React.FC = () => {
                 </div>
 
                 {/* Footnote + Action */}
-                <div className="mt-8 pt-5 border-t border-ivory-300/80">
+                <div className="mt-8 border-t border-ivory-300/80 pt-5">
                   <p className="text-[14px] leading-[1.65] text-ink-muted">
                     {tier.footnote}
                   </p>
@@ -113,35 +113,58 @@ export const BudgetsSection: React.FC = () => {
           })}
         </div>
 
-        {/* Clean Sharjah (UAE) Alternative Benchmark Card (Unchanged Approved 7.000 DKK Figure) */}
-        <div className="mt-10 rounded-[1.6rem] border border-ivory-300 bg-ivory-50 p-7 sm:p-9">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
-            <div className="max-w-2xl">
+        {/* Sharjah (UAE) Alternative Benchmark Card + Mosque & Waterfront Visual Showcase */}
+        <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-ivory-300 bg-ivory-50 p-7 shadow-warm sm:p-10">
+          <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-6">
               <p className="text-[12px] font-semibold uppercase tracking-[0.13em] text-champagne-600">
                 {t.budgets.uaeCard.tag}
               </p>
-              <div className="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <h3 className="heading-sub font-medium text-navy-900">
-                  {t.budgets.uaeCard.title}
-                </h3>
-                <span className="text-[15px] font-semibold text-sage-800">
-                  · {t.budgets.uaeCard.priceNote}
-                </span>
-              </div>
-              <p className="mt-3 text-[16px] leading-[1.75] text-ink-soft">
+              <h3 className="heading-sub mt-2 font-medium text-navy-900">
+                {t.budgets.uaeCard.title}
+              </h3>
+              <p className="mt-2 text-[15.5px] font-semibold text-sage-800">
+                {t.budgets.uaeCard.priceNote}
+              </p>
+              <p className="mt-3.5 text-[16px] leading-[1.75] text-ink-soft">
                 {t.budgets.uaeCard.body}
               </p>
+
+              <div className="mt-6">
+                <button
+                  type="button"
+                  onClick={() => scrollToBookingWithSituation('uaeSharjah')}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-navy-900/20 bg-white px-6 py-3.5 text-[14.5px] font-semibold text-navy-900 transition-colors hover:bg-ivory-200/60 sm:w-auto"
+                >
+                  <span>{t.budgets.uaeCard.cta}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
             </div>
 
-            <div className="shrink-0">
-              <button
-                type="button"
-                onClick={() => scrollToBookingWithSituation('uaeSharjah')}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-navy-900/20 bg-white px-6 py-3.5 text-[14.5px] font-semibold text-navy-900 transition-colors hover:bg-ivory-200/60 sm:w-auto"
-              >
-                <span>{t.budgets.uaeCard.cta}</span>
-                <ArrowRight className="h-4 w-4" />
-              </button>
+            {/* Two Sharjah Mosque & UAE Beauty Photographs */}
+            <div className="grid gap-3.5 sm:grid-cols-2 lg:col-span-6">
+              <figure className="overflow-hidden rounded-2xl border border-ivory-300 bg-white p-2">
+                <img
+                  src="/images/sharjah-waterfront-mosque.jpg"
+                  alt={t.budgets.uaeCard.caption1}
+                  className="aspect-[4/3.1] w-full rounded-xl object-cover"
+                />
+                <figcaption className="mt-2 px-1 text-[12.5px] font-medium text-ink-muted">
+                  {t.budgets.uaeCard.caption1}
+                </figcaption>
+              </figure>
+
+              <figure className="overflow-hidden rounded-2xl border border-ivory-300 bg-white p-2">
+                <img
+                  src="/images/sharjah-mosque-courtyard.jpg"
+                  alt={t.budgets.uaeCard.caption2}
+                  className="aspect-[4/3.1] w-full rounded-xl object-cover"
+                />
+                <figcaption className="mt-2 px-1 text-[12.5px] font-medium text-ink-muted">
+                  {t.budgets.uaeCard.caption2}
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>

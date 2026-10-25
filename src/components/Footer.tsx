@@ -49,6 +49,11 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="#gode-raad" className="hover:text-navy-900">
+                  {t.nav.advice}
+                </a>
+              </li>
+              <li>
                 <a href="#hjemve" className="hover:text-navy-900">
                   {t.nav.reflection}
                 </a>

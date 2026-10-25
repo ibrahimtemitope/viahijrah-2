@@ -52,29 +52,29 @@ export const MobileBottomDock: React.FC = () => {
       >
         <a
           href="#trin-for-trin"
-          className="rounded-full px-3 py-2 text-[13px] font-semibold text-navy-900 transition-colors active:bg-ivory-200"
+          className="whitespace-nowrap rounded-full px-3 py-2 text-[12.5px] font-semibold text-navy-900 transition-colors active:bg-ivory-200"
         >
           {t.nav.mobileDock.steps}
         </a>
 
         <a
           href="#budgetter"
-          className="rounded-full px-3 py-2 text-[13px] font-semibold text-navy-900 transition-colors active:bg-ivory-200"
+          className="whitespace-nowrap rounded-full px-3 py-2 text-[12.5px] font-semibold text-navy-900 transition-colors active:bg-ivory-200"
         >
           {t.nav.mobileDock.budgets}
         </a>
 
         <a
-          href="#hjemve"
-          className="rounded-full px-3 py-2 text-[13px] font-semibold text-navy-900 transition-colors active:bg-ivory-200"
+          href="#gode-raad"
+          className="whitespace-nowrap rounded-full px-3 py-2 text-[12.5px] font-semibold text-navy-900 transition-colors active:bg-ivory-200"
         >
-          {t.nav.mobileDock.reflection}
+          {t.nav.mobileDock.advice}
         </a>
 
         <button
           type="button"
           onClick={() => scrollToBookingWithSituation('exploring')}
-          className="rounded-full bg-sage-700 px-4 py-2 text-[13px] font-semibold text-ivory-50 transition-colors hover:bg-sage-800"
+          className="whitespace-nowrap rounded-full bg-sage-700 px-4 py-2 text-[12.5px] font-semibold text-ivory-50 transition-colors hover:bg-sage-800"
         >
           {t.nav.mobileDock.book}
         </button>

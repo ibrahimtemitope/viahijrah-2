@@ -26,6 +26,7 @@ export const Navbar: React.FC = () => {
     { href: '#tilbud', label: t.nav.offer },
     { href: '#trin-for-trin', label: t.nav.steps },
     { href: '#budgetter', label: t.nav.budgets },
+    { href: '#gode-raad', label: t.nav.advice },
     { href: '#hjemve', label: t.nav.reflection },
   ];
 
@@ -43,14 +44,14 @@ export const Navbar: React.FC = () => {
 
         {/* Single-Line Desktop Navigation */}
         <nav
-          className="hidden lg:flex lg:items-center lg:gap-7 xl:gap-9"
+          className="hidden lg:flex lg:items-center lg:gap-5 xl:gap-7"
           aria-label="Primary Navigation"
         >
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="whitespace-nowrap text-[14.5px] font-medium text-ink-soft transition-colors hover:text-navy-900"
+              className="whitespace-nowrap text-[14px] font-medium text-ink-soft transition-colors hover:text-navy-900 xl:text-[14.5px]"
             >
               {item.label}
             </a>
@@ -146,7 +147,7 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
           </div>
-          <div className="mt-4 pt-3 border-t border-ivory-300/80">
+          <div className="mt-4 border-t border-ivory-300/80 pt-3">
             <button
               type="button"
               onClick={() => {
