@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
 export const HeroSection: React.FC = () => {
@@ -68,6 +68,12 @@ export const HeroSection: React.FC = () => {
                 {t.hero.secondaryCta}
               </a>
             </div>
+
+            {/* Explicit Free 30-Min Meeting Note Right on the Main Page */}
+            <p className="mt-4 inline-flex items-center gap-2 text-[14.5px] font-medium text-sage-800">
+              <Clock className="h-4 w-4 shrink-0 text-sage-700" />
+              <span>{t.hero.freeMeetingNote}</span>
+            </p>
           </div>
 
           {/* Right Column: Sharjah UAE Mosque & Sanctuary Showcase Frame */}

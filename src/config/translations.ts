@@ -53,6 +53,7 @@ export interface TranslationContent {
     pivotBody: string;
     primaryCta: string;
     secondaryCta: string;
+    freeMeetingNote: string;
     galleryCaptions: {
       mosque: string;
       waterfront: string;
@@ -249,12 +250,12 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       budgets: 'Budgetter',
       advice: 'Gode råd',
       reflection: 'At savne Danmark',
-      bookCta: 'Book en samtale',
+      bookCta: 'Book gratis samtale',
       mobileDock: {
         steps: 'Trin',
         budgets: 'Budget',
         advice: 'Gode råd',
-        book: 'Book samtale',
+        book: 'Gratis samtale',
       },
     },
     hero: {
@@ -264,8 +265,9 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       pivotTitle: 'Måske er det tid til at overveje et nyt kapitel.',
       pivotBody:
         'Forestil dig en hverdag, hvor islam er en naturlig del af samfundet, hvor moskéerne er en del af lokalsamfundet, og hvor du kan prioritere din deen og opbygge din fremtid i et muslimsk land.',
-      primaryCta: 'Book en indledende samtale',
+      primaryCta: 'Book en uforpligtende samtale',
       secondaryCta: 'Se din hijrah trin for trin',
+      freeMeetingNote: '30 minutters samtale · 100% gratis og uforpligtende',
       galleryCaptions: {
         mosque: 'Moskéarkitektur · Sharjah, UAE',
         waterfront: 'Vandkant & moské · Sharjah, UAE',
@@ -420,8 +422,8 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
           'ViaHijrah er her for at hjælpe dig med at forstå mulighederne, skabe overblik over processen og undersøge de praktiske forhold, så du kan træffe dine beslutninger på et mere oplyst grundlag.',
         readyTitle: 'Klar til at tage det første skridt?',
         readyBody:
-          'Book en indledende samtale, hvor vi kan tale om din situation, dine mål og de muligheder, der kan være relevante for dig.',
-        cta: 'Book en indledende samtale',
+          'Book en gratis og uforpligtende 30-minutters samtale, hvor vi kan tale om din situation, dine mål og de muligheder, der kan være relevante for dig.',
+        cta: 'Book en uforpligtende samtale',
         transparencyNote:
           'Vi er altid åbne om, hvad vi konkret kan hjælpe med, og hvad der afhænger af eksterne udbydere, officielle myndigheder eller dine egne forhold.',
       },
@@ -506,8 +508,8 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
         'Du er derfor velkommen til at booke en samtale med os, selvom du ikke har penge til at flytte lige nu, og selvom du endnu ikke har en onlineindkomst.',
       body3:
         'Vi vil lytte til din situation og efter bedste evne forsøge at hjælpe dig med at finde en realistisk vej frem. Det kan eksempelvis være gennem vejledning om onlineindkomst, opsparing, budgettering og de første skridt mod din hijrah.',
-      closingLine: 'Du behøver ikke have løsningen i dag. Lad os tage en snak om dine muligheder.',
-      cta: 'Book en samtale med ViaHijrah',
+      closingLine: 'Du behøver ikke have løsningen i dag. Lad os tage en gratis og uforpligtende snak om dine muligheder.',
+      cta: 'Book en uforpligtende samtale',
       disclaimer:
         'Vi kan ikke garantere økonomisk støtte eller en bestemt løsning, men vi vil gøre vores bedste for at vejlede dig.',
     },
@@ -688,15 +690,15 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       },
     },
     consultation: {
-      eyebrow: 'Indledende samtale',
-      title: 'Lad os tale roligt om din situation og dine muligheder.',
+      eyebrow: '30 minutters møde · 100% gratis og uforpligtende',
+      title: 'Book en uforpligtende samtale',
       subtitle:
-        'Uanset om du er klar til at planlægge konkret eller blot ønsker et ærligt overblik, starter vi med en uforpligtende samtale i dit tempo.',
+        'Mødet på 30 minutter er helt gratis og uforpligtende. Uanset om du er klar til at planlægge konkret eller blot ønsker et ærligt overblik, starter vi i dit tempo.',
       expectTitle: 'Hvad du kan forvente af samtalen',
       expectItems: [
         {
-          title: 'Ingen pres eller salgssnak',
-          body: 'Vi lytter til din nuværende livssituation, dine overvejelser og hvad der er vigtigst for dig og din familie.',
+          title: '30 min. møde — helt gratis og uforpligtende',
+          body: 'Samtalen koster ingenting, og der er intet pres eller salgssnak. Vi lytter til din nuværende livssituation, dine overvejelser og hvad der er vigtigst for dig og din familie.',
         },
         {
           title: 'Ærligt indblik i priser, bolig og visum',
@@ -766,12 +768,12 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       budgets: 'Budgetar',
       advice: 'Goda råd',
       reflection: 'Att sakna hemma',
-      bookCta: 'Boka ett samtal',
+      bookCta: 'Boka gratis samtal',
       mobileDock: {
         steps: 'Steg',
         budgets: 'Budget',
         advice: 'Goda råd',
-        book: 'Boka samtal',
+        book: 'Gratis samtal',
       },
     },
     hero: {
@@ -781,8 +783,9 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       pivotTitle: 'Kanske är det dags att överväga ett nytt kapitel.',
       pivotBody:
         'Föreställ dig en vardag där islam är en naturlig del av samhället, där moskéerna är en del av lokalsamhället och där du kan prioritera din deen och bygga din framtid i ett muslimskt land.',
-      primaryCta: 'Boka ett inledande samtal',
+      primaryCta: 'Boka ett kostnadsfritt samtal',
       secondaryCta: 'Se din hijrah steg för steg',
+      freeMeetingNote: '30 minuters samtal · 100% gratis och förutsättningslöst',
       galleryCaptions: {
         mosque: 'Moskéarkitektur · Sharjah, UAE',
         waterfront: 'Strandpromenad & moské · Sharjah',
@@ -1181,15 +1184,15 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       },
     },
     consultation: {
-      eyebrow: 'Inledande samtal',
-      title: 'Låt oss prata i lugn och ro om din situation.',
+      eyebrow: '30 minuters möte · 100% gratis och förutsättningslöst',
+      title: 'Boka ett kostnadsfritt samtal',
       subtitle:
-        'Oavsett om du är redo att planera konkret eller bara vill få en ärlig överblick börjar vi med ett förutsättningslöst samtal i din takt.',
+        'Mötet på 30 minuter är helt gratis och utan förpliktelser. Oavsett om du är redo att planera konkret eller vill få en ärlig överblick börjar vi i din takt.',
       expectTitle: 'Vad du kan förvänta dig av samtalet',
       expectItems: [
         {
-          title: 'Ingen press eller säljsnack',
-          body: 'Vi lyssnar på din livssituation, dina tankar och vad som är viktigast för dig och din familj.',
+          title: '30 min. möte — helt gratis och utan press',
+          body: 'Samtalet kostar ingenting. Vi lyssnar på din livssituation, dina tankar och vad som är viktigast för dig och din familj.',
         },
         {
           title: 'Ärlig inblick i kostnader, boende och visum',
@@ -1259,12 +1262,12 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       budgets: 'Budgets',
       advice: 'Our advice',
       reflection: 'Leaving home',
-      bookCta: 'Book a call',
+      bookCta: 'Book free call',
       mobileDock: {
         steps: 'Steps',
         budgets: 'Budgets',
         advice: 'Advice',
-        book: 'Book call',
+        book: 'Free call',
       },
     },
     hero: {
@@ -1274,8 +1277,9 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       pivotTitle: 'Perhaps it is time to consider a new chapter.',
       pivotBody:
         'Imagine an everyday life where Islam is a natural part of society, where mosques belong to the neighborhood, and where you can prioritize your deen and build your future in a Muslim country.',
-      primaryCta: 'Book an introductory conversation',
+      primaryCta: 'Book a free non-binding call',
       secondaryCta: 'See your hijrah step by step',
+      freeMeetingNote: '30-minute meeting · 100% free and non-binding',
       galleryCaptions: {
         mosque: 'Mosque architecture · Sharjah, UAE',
         waterfront: 'Waterfront & mosque · Sharjah, UAE',
@@ -1672,15 +1676,15 @@ export const TRANSLATIONS: Record<LanguageCode, TranslationContent> = {
       },
     },
     consultation: {
-      eyebrow: 'Introductory conversation',
-      title: 'Let us talk calmly about your situation and options.',
+      eyebrow: '30-minute meeting · 100% free and non-binding',
+      title: 'Book a free non-binding conversation',
       subtitle:
-        'Whether you are ready to map out concrete steps or simply want an honest overview, we start with a relaxed, non-binding conversation at your pace.',
+        'Our 30-minute meeting is completely free and non-binding. Whether you are ready to map out concrete steps or simply want an honest overview, we start at your pace.',
       expectTitle: 'What to expect from our conversation',
       expectItems: [
         {
-          title: 'Zero pressure or sales pitch',
-          body: 'We listen to your situation, your thoughts, and what matters most to you and your family.',
+          title: '30-min. meeting — completely free & zero pressure',
+          body: 'The meeting costs nothing. We listen to your situation, your thoughts, and what matters most to you and your family.',
         },
         {
           title: 'Honest insight into budgets, housing & visas',

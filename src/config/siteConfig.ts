@@ -21,9 +21,9 @@ export const SITE_CONFIG = {
     baseRegion: 'Danmark · Indonesien · Sharjah (UAE)',
   },
 
-  // Calendly booking link (update when client shares live Calendly URL)
+  // Live Calendly 30-minute free consultation link
   calendly: {
-    bookingUrl: 'https://calendly.com/viahijrah/introductory-consultation',
+    bookingUrl: 'https://calendly.com/jacubumar1/30min',
   },
 
   // Dormant Stripe hook kept ready for future paid consultation packages
