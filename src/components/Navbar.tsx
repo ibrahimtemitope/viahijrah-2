@@ -23,17 +23,16 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { href: '#tilbud', label: t.nav.offer },
-    { href: '#trin-for-trin', label: t.nav.steps },
-    { href: '#budgetter', label: t.nav.budgets },
+    { href: '#destinationer', label: t.nav.destinations },
+    { href: '#budget-analyzer', label: t.nav.budgets },
+    { href: '#ingen-opsparing', label: t.nav.noFunds },
+    { href: '#proces', label: t.nav.steps },
     { href: '#gode-raad', label: t.nav.advice },
-    { href: '#hjemve', label: t.nav.reflection },
   ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-ivory-300/80 bg-ivory-50/95 backdrop-blur-md">
-      <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        {/* Swap-ready <img> Brand Logo */}
+      <div className="mx-auto flex h-[68px] max-w-[1200px] items-center justify-between gap-4 px-4 sm:h-[72px] sm:px-6 lg:px-8">
         <a href="#top" className="shrink-0 focus:outline-none" aria-label={SITE_CONFIG.brandName}>
           <img
             src={SITE_CONFIG.logos.lightMode}
@@ -42,7 +41,6 @@ export const Navbar: React.FC = () => {
           />
         </a>
 
-        {/* Single-Line Desktop Navigation */}
         <nav
           className="hidden lg:flex lg:items-center lg:gap-5 xl:gap-7"
           aria-label="Primary Navigation"
@@ -58,9 +56,7 @@ export const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        {/* Right Controls: Language Switcher + Calm Forest Sage CTA */}
         <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
-          {/* Language Dropdown (Visible on Desktop & Mobile Header) */}
           <div className="relative" ref={dropdownRef}>
             <button
               type="button"
@@ -111,7 +107,6 @@ export const Navbar: React.FC = () => {
             )}
           </div>
 
-          {/* Primary Desktop CTA */}
           <button
             type="button"
             onClick={() => scrollToBookingWithSituation('exploring')}
@@ -120,7 +115,6 @@ export const Navbar: React.FC = () => {
             {t.nav.bookCta}
           </button>
 
-          {/* Mobile Menu Toggle */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -132,29 +126,28 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Clean Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="border-t border-ivory-300 bg-ivory-50 px-5 py-5 lg:hidden">
+        <div className="border-t border-ivory-300 bg-ivory-50 px-5 py-4 lg:hidden">
           <div className="flex flex-col space-y-1">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-xl px-3 py-3 text-[16.5px] font-medium text-navy-900 transition-colors hover:bg-ivory-200/70"
+                className="rounded-xl px-3 py-2.5 text-[16px] font-medium text-navy-900 transition-colors hover:bg-ivory-200/70"
               >
                 {item.label}
               </a>
             ))}
           </div>
-          <div className="mt-4 border-t border-ivory-300/80 pt-3">
+          <div className="mt-3 border-t border-ivory-300/80 pt-3">
             <button
               type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
                 scrollToBookingWithSituation('exploring');
               }}
-              className="w-full rounded-full bg-sage-700 px-5 py-3.5 text-center text-[15.5px] font-semibold text-ivory-50 transition-colors hover:bg-sage-800"
+              className="w-full rounded-full bg-sage-700 px-5 py-3 text-center text-[15px] font-semibold text-ivory-50 transition-colors hover:bg-sage-800"
             >
               {t.nav.bookCta}
             </button>

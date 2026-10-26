@@ -1,20 +1,26 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { CorridorId, CurrencyCode } from '../config/budgetData';
 import { LanguageCode, TRANSLATIONS, TranslationContent } from '../config/translations';
 
 export type SituationKey =
   | 'exploring'
+  | 'sharjahUae'
   | 'indonesiaEssential'
   | 'indonesiaComfort'
   | 'indonesiaPremium'
-  | 'uaeSharjah'
   | 'noFundsYet';
 
 interface AppContextValue {
   language: LanguageCode;
   setLanguage: (lang: LanguageCode) => void;
   t: TranslationContent;
+  activeCorridor: CorridorId;
+  setActiveCorridor: (c: CorridorId) => void;
+  currency: CurrencyCode;
+  setCurrency: (c: CurrencyCode) => void;
   selectedSituation: SituationKey;
   setSelectedSituation: (key: SituationKey) => void;
+  jumpToBudgetCorridor: (corridor: CorridorId) => void;
   scrollToBookingWithSituation: (key?: SituationKey) => void;
 }
 
@@ -33,18 +39,39 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     return 'da';
   });
 
+  const [activeCorridor, setActiveCorridor] = useState<CorridorId>('sharjah');
+  const [currency, setCurrencyState] = useState<CurrencyCode>(() =>
+    language === 'sv' ? 'SEK' : 'DKK'
+  );
+  const [currencyOverridden, setCurrencyOverridden] = useState(false);
   const [selectedSituation, setSelectedSituation] = useState<SituationKey>('exploring');
 
   const setLanguage = (lang: LanguageCode) => {
     setLanguageState(lang);
+    if (!currencyOverridden) {
+      setCurrencyState(lang === 'sv' ? 'SEK' : 'DKK');
+    }
     if (typeof window !== 'undefined') {
       window.localStorage.setItem(LANG_STORAGE_KEY, lang);
     }
   };
 
+  const setCurrency = (c: CurrencyCode) => {
+    setCurrencyOverridden(true);
+    setCurrencyState(c);
+  };
+
   useEffect(() => {
     document.documentElement.lang = language;
   }, [language]);
+
+  const jumpToBudgetCorridor = (corridor: CorridorId) => {
+    setActiveCorridor(corridor);
+    const el = document.getElementById('budget-analyzer');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   const scrollToBookingWithSituation = (key?: SituationKey) => {
     if (key) {
@@ -62,8 +89,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         language,
         setLanguage,
         t: TRANSLATIONS[language],
+        activeCorridor,
+        setActiveCorridor,
+        currency,
+        setCurrency,
         selectedSituation,
         setSelectedSituation,
+        jumpToBudgetCorridor,
         scrollToBookingWithSituation,
       }}
     >

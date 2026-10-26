@@ -13,12 +13,10 @@ export const SITE_CONFIG = {
     alt: 'ViaHijrah',
   },
 
-  // Contact placeholders (swap with official client email/WhatsApp anytime)
+  // Official ViaHijrah contact details
   contact: {
-    email: 'kontakt@viahijrah.com',
-    whatsappDisplay: '+45 00 00 00 00',
-    whatsappHref: 'https://wa.me/4500000000',
-    baseRegion: 'Danmark · Indonesien · Sharjah (UAE)',
+    email: 'Kontakt@viahijrah.dk',
+    baseRegion: 'Skandinavien · Sharjah (UAE) · Indonesien',
   },
 
   // Live Calendly 30-minute free consultation link

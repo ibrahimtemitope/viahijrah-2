@@ -8,44 +8,47 @@ export const Footer: React.FC = () => {
   return (
     <footer
       id="site-footer"
-      className="border-t border-ivory-300 bg-ivory-100 pb-28 pt-16 lg:pb-16"
+      className="border-t border-ivory-300 bg-ivory-100 pb-24 pt-12 lg:pb-12"
     >
       <div className="mx-auto max-w-[1200px] px-5 sm:px-6 lg:px-8">
-        <div className="grid gap-10 md:grid-cols-12">
-          {/* Brand Column */}
+        <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-6">
             <img
               src={SITE_CONFIG.logos.lightMode}
               alt={SITE_CONFIG.logos.alt}
-              className="h-10 w-auto"
+              className="h-9 w-auto"
             />
-            <p className="mt-4 max-w-md text-[15.5px] font-medium leading-[1.65] text-navy-900">
+            <p className="mt-3 max-w-md text-[15px] font-medium text-navy-900">
               {t.footer.tagline}
             </p>
-            <p className="mt-2.5 max-w-md text-[15px] leading-[1.7] text-ink-soft">
+            <p className="mt-1.5 max-w-md text-[14px] text-ink-soft">
               {t.footer.description}
             </p>
           </div>
 
-          {/* Quick Links */}
           <div className="md:col-span-3">
-            <h3 className="text-[13px] font-semibold uppercase tracking-[0.12em] text-navy-900">
+            <h3 className="text-[12px] font-semibold uppercase tracking-[0.12em] text-navy-900">
               {t.footer.linksTitle}
             </h3>
-            <ul className="mt-4 space-y-2.5 text-[15px] text-ink-soft">
+            <ul className="mt-3 space-y-1.5 text-[14px] text-ink-soft">
               <li>
-                <a href="#tilbud" className="hover:text-navy-900">
-                  {t.nav.offer}
+                <a href="#destinationer" className="hover:text-navy-900">
+                  {t.nav.destinations}
                 </a>
               </li>
               <li>
-                <a href="#trin-for-trin" className="hover:text-navy-900">
-                  {t.nav.steps}
-                </a>
-              </li>
-              <li>
-                <a href="#budgetter" className="hover:text-navy-900">
+                <a href="#budget-analyzer" className="hover:text-navy-900">
                   {t.nav.budgets}
+                </a>
+              </li>
+              <li>
+                <a href="#ingen-opsparing" className="hover:text-navy-900">
+                  {t.nav.noFunds}
+                </a>
+              </li>
+              <li>
+                <a href="#proces" className="hover:text-navy-900">
+                  {t.nav.steps}
                 </a>
               </li>
               <li>
@@ -53,25 +56,14 @@ export const Footer: React.FC = () => {
                   {t.nav.advice}
                 </a>
               </li>
-              <li>
-                <a href="#hjemve" className="hover:text-navy-900">
-                  {t.nav.reflection}
-                </a>
-              </li>
-              <li>
-                <a href="#booking" className="hover:text-navy-900">
-                  {t.nav.bookCta}
-                </a>
-              </li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div className="md:col-span-3">
-            <h3 className="text-[13px] font-semibold uppercase tracking-[0.12em] text-navy-900">
+            <h3 className="text-[12px] font-semibold uppercase tracking-[0.12em] text-navy-900">
               {t.footer.contactTitle}
             </h3>
-            <ul className="mt-4 space-y-2.5 text-[15px] text-ink-soft">
+            <ul className="mt-3 space-y-1.5 text-[14px] text-ink-soft">
               <li>
                 <a
                   href={`mailto:${SITE_CONFIG.contact.email}`}
@@ -80,31 +72,16 @@ export const Footer: React.FC = () => {
                   {SITE_CONFIG.contact.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={SITE_CONFIG.contact.whatsappHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-navy-900"
-                >
-                  WhatsApp: {SITE_CONFIG.contact.whatsappDisplay}
-                </a>
-              </li>
-              <li className="text-[14px] text-ink-muted">
+              <li className="text-[13.5px] text-ink-muted">
                 {SITE_CONFIG.contact.baseRegion}
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Honest Transparency & Copyright */}
-        <div className="mt-12 border-t border-ivory-300 pt-7">
-          <p className="max-w-4xl text-[13.5px] leading-[1.68] text-ink-muted">
-            {t.footer.transparency}
-          </p>
-          <p className="mt-4 text-[13.5px] text-ink-muted">
-            {t.footer.copyright}
-          </p>
+        <div className="mt-8 border-t border-ivory-300 pt-5 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between text-[12.5px] text-ink-muted">
+          <p>{t.footer.transparency}</p>
+          <p className="shrink-0">{t.footer.copyright}</p>
         </div>
       </div>
     </footer>
